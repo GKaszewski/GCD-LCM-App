@@ -31,12 +31,12 @@ public class MainActivity extends AppCompatActivity {
                 int result = 0;
                 if (!TextUtils.isEmpty(thirdNmb_Textbox.getText().toString()))
                 {
-                    result = GetLCD(GetLCD(Integer.parseInt(firstNmb_Textbox.getText().toString()), Integer.parseInt(secondNmb_Textbox.getText().toString())), Integer.parseInt(thirdNmb_Textbox.getText().toString()));
+                    result = GetGCD(GetGCD(Integer.parseInt(firstNmb_Textbox.getText().toString()), Integer.parseInt(secondNmb_Textbox.getText().toString())), Integer.parseInt(thirdNmb_Textbox.getText().toString()));
                     output.setText("NWD = " + result);
                     return;
                 }
 
-                result = GetLCD(Integer.parseInt(firstNmb_Textbox.getText().toString()), Integer.parseInt(secondNmb_Textbox.getText().toString()));
+                result = GetGCD(Integer.parseInt(firstNmb_Textbox.getText().toString()), Integer.parseInt(secondNmb_Textbox.getText().toString()));
 
                 output.setText("NWD = " + result);
             }
@@ -61,14 +61,14 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
-    private int GetLCD(int a, int b)
+    private int GetGCD(int a, int b)
     {
        if (b == 0) return a;
-       else return GetLCD(b, a % b);
+       else return GetGCD(b, a % b);
     }
 
     private int GetLCM(int a, int b)
     {
-        return ((a * b) / GetLCD(a, b));
+        return ((a * b) / GetGCD(a, b));
     }
 }

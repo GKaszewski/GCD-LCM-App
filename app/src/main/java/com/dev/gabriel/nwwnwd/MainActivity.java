@@ -31,7 +31,11 @@ public class MainActivity extends AppCompatActivity {
                 int result = 0;
                 if (!TextUtils.isEmpty(thirdNmb_Textbox.getText().toString()))
                 {
-                    result = GetGCD(GetGCD(Integer.parseInt(firstNmb_Textbox.getText().toString()), Integer.parseInt(secondNmb_Textbox.getText().toString())), Integer.parseInt(thirdNmb_Textbox.getText().toString()));
+                    int firstNmb = Integer.parseInt(firstNmb_Textbox.getText().toString());
+                    int secondNmb = Integer.parseInt(secondNmb_Textbox.getText().toString());
+                    int thirdNmb = Integer.parseInt(thirdNmb_Textbox.getText().toString());
+
+                    result = GetGCD(GetGCD(firstNmb, secondNmb), thirdNmb);
                     output.setText("NWD = " + result);
                     return;
                 }
@@ -49,7 +53,10 @@ public class MainActivity extends AppCompatActivity {
             {
                 if (!TextUtils.isEmpty(thirdNmb_Textbox.getText().toString()))
                 {
-                    int result = GetLCM(GetLCM(Integer.parseInt(firstNmb_Textbox.getText().toString()), Integer.parseInt(secondNmb_Textbox.getText().toString())), Integer.parseInt(thirdNmb_Textbox.getText().toString()));
+                    int firstNmb = Integer.parseInt(firstNmb_Textbox.getText().toString());
+                    int secondNmb = Integer.parseInt(secondNmb_Textbox.getText().toString());
+                    int thirdNmb = Integer.parseInt(thirdNmb_Textbox.getText().toString());
+                    int result = GetLCM(GetLCM(firstNmb, secondNmb), thirdNmb);
                     output.setText("NWW = " + result);
                     return;
                 }
